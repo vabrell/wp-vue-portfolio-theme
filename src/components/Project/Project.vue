@@ -37,7 +37,13 @@
         </div>
 			</div>
 
-			<div class="w-full mb-3">
+			<p class="mx-4 mb-3">{{ project.acf.description }}</p>
+
+			<p class="mx-4 text-gray-500">
+				Developed with: {{ getDev(project.acf.developed_with) }}
+			</p>
+
+      <div class="w-full">
 				<Media
 					class="w-full bg-cover bg-center text-center"
 					v-if="project.featured_media > 0"
@@ -45,12 +51,6 @@
 					:img="true"
 				/>
 			</div>
-
-			<p class="mx-4 mb-3">{{ project.acf.description }}</p>
-
-			<p class="mx-4 text-gray-500">
-				Developed with: {{ getDev(project.acf.developed_with) }}
-			</p>
 		</div>
 	</div>
 	<div v-else>
