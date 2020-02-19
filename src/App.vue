@@ -1,5 +1,5 @@
 <template>
-  <div id="my-app" class="flex flex-col md:min-h-screen">
+  <div id="my-app" class="flex flex-col md:min-h-screen bg-teal-100">
     <app-header />
 
     <transition name="loader-animation" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
