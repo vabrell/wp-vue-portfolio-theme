@@ -3,7 +3,7 @@ import * as types from '../mutation-types'
 
 const createProjectSlug = project => {
 	let slug = project.link.replace('http://' + window.location.hostname, '')
-	slug = slug.replace('https://' + window.location.hostname, 'project/')
+	slug = slug.replace('https://' + window.location.hostname, '')
 	project.slug = slug
 	return project
 }
