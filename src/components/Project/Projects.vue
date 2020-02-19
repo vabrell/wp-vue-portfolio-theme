@@ -31,7 +31,7 @@
 						</div>
 
 						<div class="text-sm text-gray-500">
-							<span class="font-semibold">Developt with:</span>
+							<span class="font-semibold">Utvecklat med:</span>
 							{{ getDev(project.acf.developed_with) }}
 						</div>
 					</div>

@@ -40,7 +40,7 @@
 			<p class="mx-4 mb-3">{{ project.acf.description }}</p>
 
 			<p class="mx-4 text-gray-500">
-				Developed with: {{ getDev(project.acf.developed_with) }}
+				Utvecklat med: {{ getDev(project.acf.developed_with) }}
 			</p>
 
       <div class="w-full">
