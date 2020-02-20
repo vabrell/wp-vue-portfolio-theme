@@ -3,7 +3,7 @@
 		<div class="mb-4">
 			<mark class="bg-teal-500 px-4 py-1 text-sm font-semibold text-white">
 				<router-link class="text-teal-200 hover:text-white" to="/projects"
-					>Projects</router-link
+					>Projekt</router-link
 				>
 				/
 				<span class="font-bold" v-html="project.title.rendered"></span>
