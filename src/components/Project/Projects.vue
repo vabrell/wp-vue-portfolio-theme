@@ -1,7 +1,7 @@
 <template>
 	<div class="widget projects">
 		<h3 class="mb-4">
-			<mark class="px-3 py-1 bg-teal-500 text-white">Projects</mark>
+			<mark class="px-3 py-1 bg-teal-500 text-white">Projekt</mark>
 		</h3>
 		<div v-if="recentProjectsLoaded">
 			<div v-for="project in recentProjects()" :key="project.id">
