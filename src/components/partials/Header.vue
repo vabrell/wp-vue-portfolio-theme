@@ -45,7 +45,7 @@
 			class="w-full block flex-grow md:flex md:items-center md:w-auto"
 			:class="isOpen ? 'block' : 'hidden'"
 		>
-      <Menu location="primary_menu" />
+      <Menu location="primary_menu" :primary="true" />
 		</div>
 	</nav>
 </template>

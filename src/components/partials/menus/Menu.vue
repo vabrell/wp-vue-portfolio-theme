@@ -1,7 +1,16 @@
 <template>
-	<div v-if="menu" class="md:flex md:flex-grow">
+	<div
+		v-if="menu"
+		:class="{
+			'md:flex': primary,
+			'md:flex-grow': primary,
+			'flex': !primary,
+			'flex-grow': !primary
+		}"
+	>
 		<div
 			class="font-semibold mt-4 md:mt-0 md:mr-3"
+      :class="{ 'mr-3': !primary }"
 			v-for="item in menu.items"
 			:key="item.id"
 		>
@@ -19,7 +28,7 @@
 				><font-awesome-icon
 					v-if="iconExists(item.url)"
 					:icon="getIcon(item.url)"
-          class="text-3xl text-teal-300 hover:text-white"
+					class="text-3xl text-teal-300 hover:text-white"
 				/><span v-else>{{ item.title }}</span></a
 			>
 		</div>
@@ -57,52 +66,59 @@ export default {
 		},
 
 		parseRouterLink(url) {
-			return url.replace(window.location.origin, '')
-    },
-    
-    iconExists(url) {
-      const icons = ['github', 'linkedin', 'twitter', 'facebook']
-      let exist = false
-      icons.forEach(icon => {
-        if (url.toLowerCase().includes(icon)) {
-          exist = true
-        }
-      })
-      return exist
-    },
+			let slug = url.replace('http://' + window.location.hostname, '')
+			slug = slug.replace('https://' + window.location.hostname, '')
+			return slug
+		},
 
-    getIcon(url) {
-      const icons = ['github', 'linkedin', 'twitter', 'facebook']
-      let setIcon
-      icons.forEach(icon => {
-        if (url.toLowerCase().includes(icon)) {
-          switch(icon) {
-            case 'github':
-              setIcon = 'github-square'
-            break
-            
-            case 'linkedin':
-              setIcon = 'linkedin'
-            break
+		iconExists(url) {
+			const icons = ['github', 'linkedin', 'twitter', 'facebook']
+			let exist = false
+			icons.forEach(icon => {
+				if (url.toLowerCase().includes(icon)) {
+					exist = true
+				}
+			})
+			return exist
+		},
 
-            case 'twitter':
-              setIcon = 'twitter-square'
-            break
+		getIcon(url) {
+			const icons = ['github', 'linkedin', 'twitter', 'facebook']
+			let setIcon
+			icons.forEach(icon => {
+				if (url.toLowerCase().includes(icon)) {
+					switch (icon) {
+						case 'github':
+							setIcon = 'github-square'
+							break
 
-            case 'facebook':
-              setIcon = 'facebook-square'
-            break
-          }
-        }
-      })
-      return ['fab', setIcon]
-    }
+						case 'linkedin':
+							setIcon = 'linkedin'
+							break
+
+						case 'twitter':
+							setIcon = 'twitter-square'
+							break
+
+						case 'facebook':
+							setIcon = 'facebook-square'
+							break
+					}
+				}
+			})
+			return ['fab', setIcon]
+		}
 	},
 
 	props: {
 		location: {
 			type: String,
 			required: true
+		},
+
+		primary: {
+			type: Boolean,
+			default: false
 		}
 	}
 }
