@@ -3,6 +3,27 @@ module.exports = {
 	important: false,
 	separator: ':',
 	theme: {
+    animations: { 
+      'spin': {
+        from: {
+          transform: 'rotate(0deg)',
+        },
+        to: {
+          transform: 'rotate(360deg)',
+        },
+      },
+      'jump': {
+        '0%': {
+          transform: 'translateY(0%)',
+        },
+        '50%': {
+          transform: 'translateY(-100%)',
+        },
+        '100%': {
+          transform: 'translateY(0%)',
+        },
+      },
+    },
 		screens: {
 			sm: '640px',
 			md: '768px',
@@ -485,5 +506,7 @@ module.exports = {
 		zIndex: ['responsive']
 	},
 	corePlugins: {},
-	plugins: []
+	plugins: [
+    require('tailwindcss-animations')
+  ]
 }

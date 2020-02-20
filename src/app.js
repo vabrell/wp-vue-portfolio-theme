@@ -7,7 +7,7 @@ import App from './App.vue'
 import store from './store'
 import * as types from './store/mutation-types'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faSync } from '@fortawesome/free-solid-svg-icons'
 import { faGithubSquare, faTwitterSquare, faLinkedin, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -16,7 +16,8 @@ library.add([
   faTwitterSquare,
   faLinkedin,
   faFacebookSquare,
-  faEye
+  faEye,
+  faSync
 ])
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
